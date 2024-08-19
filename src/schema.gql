@@ -1,0 +1,55 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Auth {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+type LoginResponse {
+  accessToken: String!
+}
+
+type Mutation {
+  login(loginDto: LoginInput!): LoginResponse!
+  signUp(dto: SignUpInput!): User!
+  uploadImage(image: Upload!): Boolean!
+}
+
+type Query {
+  auth(id: Int!): Auth!
+  profile: User!
+  users: [User!]!
+}
+
+input SignUpInput {
+  email: String!
+  password: String!
+  userName: String!
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+type User {
+  """email"""
+  email: String!
+
+  """id"""
+  id: String!
+
+  """image"""
+  image: String
+
+  """is_active"""
+  isActive: Boolean!
+
+  """user_name"""
+  userName: String!
+}
