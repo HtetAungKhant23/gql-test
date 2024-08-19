@@ -35,10 +35,6 @@ export class UsersService {
     } catch (err) {}
   }
 
-  findAll() {
-    return '';
-  }
-
   async getProfile(id: string) {
     try {
       const user = await this.dbServie.user.findUnique({

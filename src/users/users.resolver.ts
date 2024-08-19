@@ -21,11 +21,6 @@ export class UsersResolver {
     return this.usersService.uploadImg(file, user.id);
   }
 
-  @Query(() => [User], { name: 'users' })
-  findAll() {
-    return this.usersService.findAll();
-  }
-
   @UseGuards(JwtAuthGuard)
   @Query(() => User, { name: 'profile' })
   getProfile(@CurrentUser() user: IAuthUser) {

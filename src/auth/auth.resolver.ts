@@ -19,14 +19,4 @@ export class AuthResolver {
   login(@Args('loginDto') loginInput: LoginInput) {
     return this.authService.login(loginInput);
   }
-
-  @Query(() => [Auth], { name: 'auth' })
-  findAll() {
-    return this.authService.findAll();
-  }
-
-  @Query(() => Auth, { name: 'auth' })
-  findOne(@Args('id', { type: () => Int }) id: number) {
-    return this.authService.findOne(id);
-  }
 }

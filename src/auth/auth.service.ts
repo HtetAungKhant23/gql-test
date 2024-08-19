@@ -71,14 +71,6 @@ export class AuthService {
       });
   }
 
-  findAll() {
-    return `This action returns all auth`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} auth`;
-  }
-
   async generateToken(userId: string, email: string) {
     const accessToken = this.jwtService.sign(
       {
